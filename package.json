@@ -1,0 +1,19 @@
+{
+  "name": "hero-api",
+  "version": "1.0.0",
+  "description": "A simple superhero api for the purpose of learning API development under the REST paradigm",
+  "main": "dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunnigylfa/hero-api.git"
+  },
+  "author": "Gunnar Gylfason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gunnigylfa/hero-api/issues"
+  },
+  "homepage": "https://github.com/gunnigylfa/hero-api#readme"
+}
