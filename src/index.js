@@ -5,7 +5,6 @@ import config from './config';
 
 const app = express();
 
-
 /*
  * Send out a welcome message when the user hits our
  * welcome route at http://localhost:1337/help
