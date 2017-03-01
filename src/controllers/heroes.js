@@ -24,7 +24,14 @@ export default () => {
   });
 
   // GET '/v1/heroes' Get (Read) all heroes
-
+  api.get('/', (req, res) => {
+    Hero.find({}, (err, heroes) => {
+      if (err) {
+        return res.send(err);
+      }
+      return res.json(heroes);
+    });
+  });
   // GET '/v1/heroes/:id' Get (Read) a specific heroe by ObjectId
 
   // PUT '/v1/restaurants' Update restaurant entry
