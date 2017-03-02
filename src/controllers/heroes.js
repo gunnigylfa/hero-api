@@ -66,5 +66,18 @@ export default () => {
   });
 
   // DELETE '/v1/heores/' Delete hero entry
+  api.delete('/:id', (req, res) => {
+    Hero.remove({
+      __id: req.params.id,
+    }, (err) => {
+      if (err) {
+        return res.status(500).send('Something broke!');
+      }
+      return res.json({
+        message: 'Hero successfully removed',
+      });
+    });
+  });
+
   return api;
 };
