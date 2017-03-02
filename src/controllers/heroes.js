@@ -14,7 +14,7 @@ export default () => {
     // Save it in our database
     newHero.save((err, hero) => {
       if (err) {
-        return res.status(500).send('Something broke!');
+        return res.send(saveErr);
       }
       // If everything worked then we notify user of success
       return res.json({
@@ -71,7 +71,7 @@ export default () => {
       _id: req.params.id,
     }, (err) => {
       if (err) {
-        return res.status(500).send('Something broke!');
+        return res.send(saveErr);
       }
       return res.json({
         message: 'Hero successfully removed',
