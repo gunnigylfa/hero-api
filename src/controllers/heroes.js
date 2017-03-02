@@ -32,7 +32,16 @@ export default () => {
       return res.json(heroes);
     });
   });
+
   // GET '/v1/heroes/:id' Get (Read) a specific heroe by ObjectId
+  api.get('/:id', (req, res) => {
+    Hero.findById(req.params.id, (err, hero) => {
+      if (err) {
+        return res.send(err);
+      }
+      return res.json(hero);
+    });
+  });
 
   // PUT '/v1/restaurants' Update restaurant entry
 
