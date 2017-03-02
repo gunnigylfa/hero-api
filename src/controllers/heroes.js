@@ -12,13 +12,14 @@ export default () => {
     newHero.name = req.body.name;
     newHero.secretIdentity = req.body.secretIdentity;
     // Save it in our database
-    newHero.save((err) => {
+    newHero.save((err, hero) => {
       if (err) {
         return res.status(500).send('Something broke!');
       }
       // If everything worked then we notify user of success
       return res.json({
         message: 'Superhero saved successfully',
+        hero,
       });
     });
   });
@@ -63,6 +64,7 @@ export default () => {
       });
     });
   });
+
   // DELETE '/v1/heores/' Delete hero entry
   return api;
 };
