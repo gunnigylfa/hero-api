@@ -43,8 +43,26 @@ export default () => {
     });
   });
 
-  // PUT '/v1/restaurants' Update restaurant entry
+  // PUT '/v1/heroes' Update hero entry
+  api.put('/:id', (req, res) => {
+    Hero.findById(req.params.id, (err, hero) => {
+      if (err) {
+        return res.send(err);
+      }
+      hero.name = req.body.name;
+      hero.secretIdentity = req.body.name;
 
-  // DELETE '/v1/restaurants/' Delete restaurant entry
+      return hero.save((saveErr, savedHero) => {
+        if (saveErr) {
+          return res.send(saveErr);
+        }
+        return res.json({
+          message: 'Hero updated',
+          hero: savedHero,
+        });
+      });
+    });
+  });
+  // DELETE '/v1/heores/' Delete hero entry
   return api;
 };
